@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace THOS.Domain.Enums
+﻿namespace THOS.Client.Domain.Enums
 {
-    internal class SyncStatus
+    public enum SyncStatus
     {
+        Synced = 0,
+        PendingUpload = 1,
+        Syncing = 2,
+        Error = 3
     }
 }

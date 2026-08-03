@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            tabControl1.SuspendLayout();
+            tbcPatients = new TabControl();
+            tbpRegistration = new TabPage();
+            tbpSearch = new TabPage();
+            tbcPatients.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // tbcPatients
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 12);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1081, 651);
-            tabControl1.TabIndex = 0;
+            tbcPatients.Dock = DockStyle.Fill;
+            tbcPatients.Controls.Add(tbpRegistration);
+            tbcPatients.Controls.Add(tbpSearch);
+            tbcPatients.Name = "tbcPatients";
+            tbcPatients.SelectedIndex = 0;
+            tbcPatients.Size = new Size(1096, 675);
+            tbcPatients.TabIndex = 0;
             // 
-            // tabPage1
+            // tbpRegistration
             // 
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1073, 618);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tbpRegistration.Name = "tbpRegistration";
+            tbpRegistration.Padding = new Padding(3);
+            tbpRegistration.AutoScroll = true;
+            tbpRegistration.Size = new Size(1088, 642);
+            tbpRegistration.TabIndex = 0;
+            tbpRegistration.Text = "Cadastro";
+            tbpRegistration.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tbpSearch
             // 
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1073, 618);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tbpSearch.Name = "tbpSearch";
+            tbpSearch.Padding = new Padding(3);
+            tbpSearch.AutoScroll = true;
+            tbpSearch.Size = new Size(1088, 642);
+            tbpSearch.TabIndex = 1;
+            tbpSearch.Text = "Busca";
+            tbpSearch.UseVisualStyleBackColor = true;
             // 
             // PatientManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 675);
-            Controls.Add(tabControl1);
+            Controls.Add(tbcPatients);
+            MinimumSize = new Size(900, 600);
             Name = "PatientManagementForm";
-            Text = "PacientManagementForm";
-            Load += PatientManagementForm_Load;
-            tabControl1.ResumeLayout(false);
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "THOS | Pacientes";
+            tbcPatients.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabControl tbcPatients;
+        private TabPage tbpRegistration;
+        private TabPage tbpSearch;
     }
 }
