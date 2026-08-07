@@ -654,7 +654,11 @@ namespace THOS.Controls
             btnSave.Size = new Size(88, 31);
             btnSave.TabIndex = 2;
             btnSave.Text = "Salvar";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.BackColor = System.Drawing.Color.FromArgb(52, 152, 219);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSave.ForeColor = System.Drawing.Color.White;
+            btnSave.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -664,10 +668,15 @@ namespace THOS.Controls
             btnCancel.Size = new Size(88, 31);
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancelar";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.BackColor = System.Drawing.Color.FromArgb(231, 76, 60);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCancel.ForeColor = System.Drawing.Color.White;
+            btnCancel.UseVisualStyleBackColor = false;
             // 
             // PatientRegistrationControl
             // 
+            BackColor = System.Drawing.Color.White;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
@@ -756,3 +765,6 @@ namespace THOS.Controls
         private Label lblFormStatus;
     }
 }
+
+
+

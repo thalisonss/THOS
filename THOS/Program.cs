@@ -15,12 +15,38 @@ namespace THOS.Client
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-
             // 1. Inicializa o Banco SQLite Local via EF Core
             InitializeAndVerifyDatabase();
+            
+            // 2. Apresenta a tela de Login
+            using (var loginForm = new THOS.Client.Presentation.Forms.LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                                        var user = loginForm.AuthenticatedUser;
+                    if (user == null) { Application.Exit(); return; }
+                    
+                    // Se nao tem perfil ou eh vazio, força a selecionar
+                    if (user.ProfileLastAccessId == null || user.ProfileLastAccessId == Guid.Empty)
+                    {
+                        using (var profileForm = new THOS.Client.Presentation.Forms.SelectProfileForm(user.Id))
+                        {
+                            if (profileForm.ShowDialog() != DialogResult.OK)
+                            {
+                                Application.Exit();
+                                return;
+                            }
+                        }
+                    }
 
-            // 2. Inicia o formulário principal
-            Application.Run(new PatientManagementForm());
+                    // 3. Inicia o formulário principal
+                    Application.Run(new THOS.Client.Presentation.Forms.MainForm(user.Id));
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         private static void InitializeAndVerifyDatabase()
@@ -57,3 +83,5 @@ namespace THOS.Client
         }
     }
 }
+
+
